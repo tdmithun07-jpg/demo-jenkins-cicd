@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sample-app-1
+  name: sample-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: sample-app-1
+      app: sample-app
   template:
     metadata:
       labels:
-        app: sample-app-1
+        app: sample-app
     spec:
       containers:
-      - name: sample-app-1
+      - name: sample-app
         image: 888154844094.dkr.ecr.us-east-1.amazonaws.com/jenkins-2801:latest
         ports:
         - containerPort: 80
@@ -21,7 +21,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: sample-service-1
+  name: sample-service
 spec:
   type: LoadBalancer
   selector:
